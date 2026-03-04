@@ -1,0 +1,17 @@
+--- Consoles_App.cpp	2023-03-30 00:29:02.000000000 +0200
++++ Consoles_App.cpp	2026-03-04 06:49:44.993216500 +0100
+@@ -85,9 +85,14 @@
+ #endif
+ };
+ 
++#include "CML.h"
+ 
+ CMinecraftApp::CMinecraftApp()
+ {
++	CML::getInstance().loadMods("C:\\CMLMods");
++
++	CML::getInstance().callOnPreStartup();
++
+ 	if(GAME_SETTINGS_PROFILE_DATA_BYTES != sizeof(GAME_SETTINGS))
+ 	{
+ 		// 4J Stu - See comment for GAME_SETTINGS_PROFILE_DATA_BYTES in Xbox_App.h
